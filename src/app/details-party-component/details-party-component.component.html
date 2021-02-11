@@ -1,0 +1,93 @@
+
+<div >
+    <fieldset style="width: 50%;background-color: yellow;" >
+        <legend>{{Party1[1]}}</legend>
+        <label >Date:{{Party2[2]}}</label>
+        <br><br>
+        <label >Type:{{Party1[6]}}</label>
+        <br><br>
+        <label >Nombre de places:{{Party1[3]}}</label>
+        <br><br>
+        <label >Nombre de places disponibles :{{Party1[4]}}</label>
+        <br><br>
+        <label >Description:{{Party1[5]}}</label>
+        <br><br>
+        <input type="submit" value="Réserver" (click)="openReserver1()">
+        <div  *ngIf="open1" style="display:block">
+            <p>Nombre de places à réserver </p>
+            <input   type="text" placeholder="saisir un Nombre" [(ngModel)]="model.placeNonReserver1"
+             #placeNonReserver1="ngModel"  name="placeNonReserver1" >
+            <input type="submit" value="valider" (click)="decrementeNombre1()" >
+        </div>
+    </fieldset>
+
+    <br>
+    <fieldset style="width: 50%;background-color: green;" >
+        <legend>{{Party2[1]}}</legend>
+        <label >Date:{{Party2[2]}}</label>
+        <br><br>
+        <label >Type:{{Party2[6]}}</label>
+        <br><br>
+        <label >Nombre de places:{{Party2[3]}}</label>
+        <br><br>
+        <label >Nombre de places disponibles :{{Party2[4]}}</label>
+        <br><br>
+        <label >Description:{{Party2[5]}}</label>
+        <br><br>
+        <input type="submit" value="Réserver" (click)="openReserver2()">
+        <div  *ngIf="open2" style="display:block">
+            <p>Nombre de places à réserver </p>
+            <input   type="text" placeholder="saisir un Nombre" [(ngModel)]="model.placeNonReserver2"
+             #placeNonReserver2="ngModel"  name="placeNonReserver2" >
+            <input type="submit" value="valider" (click)="decrementeNombre2()" >
+        </div>
+    </fieldset>
+    <br>
+    <fieldset style="width: 50%;background-color: orange;" >
+        <legend>{{Party3[1]}}</legend>
+        <label >Date:{{Party3[2]}}</label>
+        <br><br>
+        <label >Type:{{Party3[6]}}</label>
+        <br><br>
+        <label >Nombre de places:{{Party3[3]}}</label>
+        <br><br>
+        <label >Nombre de places disponibles :{{Party3[4]}}</label>
+        <br><br>
+        <label >Description:{{Party3[5]}}</label>
+        <br><br>
+        <input type="submit" value="Réserver" (click)="openReserver3()">
+        <div  *ngIf="open3" style="display:block">
+            <p>Nombre de places à réserver </p>
+            <input   type="text" placeholder="saisir un Nombre" [(ngModel)]="model.placeNonReserver3"
+             #placeNonReserver3="ngModel"  name="placeNonReserver3" >
+            <input type="submit" value="valider" (click)="decrementeNombre3()" >
+        </div>
+    </fieldset>
+    <br>
+    <fieldset style="width: 50%;background-color: green;" >
+        <legend>{{Party4[1]}}</legend>
+        <label >Date:{{Party4[2]}}</label>
+        <br><br>
+        <label >Type:{{Party4[6]}}</label>
+        <br><br>
+        <label >Nombre de places:{{Party4[3]}}</label>
+        <br><br>
+        <label >Nombre de places disponibles :{{Party4[4]}}</label>
+        <br><br>
+        <label >Description:{{Party4[5]}}</label>
+        <br><br>
+        <input type="submit" value="Réserver" (click)="openReserver4()">
+        <div  *ngIf="open4" style="display:block">
+            <p>Nombre de places à réserver </p>
+            <input   type="text" placeholder="saisir un Nombre" [(ngModel)]="model.placeNonReserver4"
+             #placeNonReserver4="ngModel"  name="placeNonReserver4" >
+            <input type="submit" value="valider" (click)="decrementeNombre4()" >
+        </div>
+    </fieldset>
+    <br>
+</div>
+
+
+
+
+

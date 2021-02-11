@@ -1,0 +1,47 @@
+<div style="text-align: center;">
+
+    <h1>Prise de rendez-vous en ligne </h1>
+    <h3>recherche d'un medecin </h3>
+    <div style="display:flex;flex-direction: row;justify-content: baseline;justify-content: center;">
+        <span style="font-size: 18px;margin-right: 20px;">Spécialité</span>
+        <form>
+            <select  [(ngModel)]="model.selectedSpecialite"
+            #selectedSpecialite="ngModel" placeholder="Specialite" name="selectedSpecialite" >
+                <option [value]="speciality" *ngFor="let speciality of specialites">{{speciality}}</option>
+            </select>
+        </form>
+    </div>
+    <h3 style="text-align: center;">Liste des Medecins</h3>
+    <div style="display:flex;flex-direction: row;justify-content: baseline;justify-content: center;margin-bottom: 30px;">
+       
+        <table class="table table-striped" style="width: 50%;text-align: center;border: 1px solid grey;">
+            <thead>
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">specialite</th>
+                    <th scope="col">disponibilite</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let el of medecins| medecin:model.selectedSpecialite
+                let i=index">
+                    <td id="nom">
+                        {{ el.nom }}
+                    </td>
+                    <td id="specialite">{{ el.specialite }}</td>
+                    <td>{{ el.disponibilite }}</td>
+                    <td><button (click)="openRendezVous()">Prendre rendez-vous </button></td>
+                   
+                </tr>
+            </tbody>
+         
+        </table>
+        
+    </div>
+    <div *ngIf="open" >
+        <button  style="background-color:rgb(210, 217, 224);" 
+        [disabled]="editmode==true ? 'disabled': null" > {{selectedNom}}</button>
+        <h5>Nom de Patient: <input type="text"></h5> 
+        <button (click)="changeDispo()">confirmer </button>
+     </div>
